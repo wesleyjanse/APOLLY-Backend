@@ -1,0 +1,16 @@
+D:\1-School\3ITF\Angular\Apolly-Backend\Apolly-Backend\bin\Debug\netcoreapp2.2\appsettings.Development.json
+D:\1-School\3ITF\Angular\Apolly-Backend\Apolly-Backend\bin\Debug\netcoreapp2.2\appsettings.json
+D:\1-School\3ITF\Angular\Apolly-Backend\Apolly-Backend\bin\Debug\netcoreapp2.2\Properties\launchSettings.json
+D:\1-School\3ITF\Angular\Apolly-Backend\Apolly-Backend\bin\Debug\netcoreapp2.2\Apolly-Backend.deps.json
+D:\1-School\3ITF\Angular\Apolly-Backend\Apolly-Backend\bin\Debug\netcoreapp2.2\Apolly-Backend.runtimeconfig.json
+D:\1-School\3ITF\Angular\Apolly-Backend\Apolly-Backend\bin\Debug\netcoreapp2.2\Apolly-Backend.runtimeconfig.dev.json
+D:\1-School\3ITF\Angular\Apolly-Backend\Apolly-Backend\bin\Debug\netcoreapp2.2\Apolly-Backend.dll
+D:\1-School\3ITF\Angular\Apolly-Backend\Apolly-Backend\obj\Debug\netcoreapp2.2\Apolly-Backend.csprojAssemblyReference.cache
+D:\1-School\3ITF\Angular\Apolly-Backend\Apolly-Backend\obj\Debug\netcoreapp2.2\Apolly-Backend.RazorAssemblyInfo.cache
+D:\1-School\3ITF\Angular\Apolly-Backend\Apolly-Backend\obj\Debug\netcoreapp2.2\Apolly-Backend.RazorAssemblyInfo.cs
+D:\1-School\3ITF\Angular\Apolly-Backend\Apolly-Backend\obj\Debug\netcoreapp2.2\Apolly-Backend.AssemblyInfoInputs.cache
+D:\1-School\3ITF\Angular\Apolly-Backend\Apolly-Backend\obj\Debug\netcoreapp2.2\Apolly-Backend.AssemblyInfo.cs
+D:\1-School\3ITF\Angular\Apolly-Backend\Apolly-Backend\obj\Debug\netcoreapp2.2\Apolly-Backend.RazorTargetAssemblyInfo.cache
+D:\1-School\3ITF\Angular\Apolly-Backend\Apolly-Backend\bin\Debug\netcoreapp2.2\Apolly-Backend.pdb
+D:\1-School\3ITF\Angular\Apolly-Backend\Apolly-Backend\obj\Debug\netcoreapp2.2\Apolly-Backend.dll
+D:\1-School\3ITF\Angular\Apolly-Backend\Apolly-Backend\obj\Debug\netcoreapp2.2\Apolly-Backend.pdb
