@@ -95,6 +95,17 @@ namespace Apolly_Backend.Controllers
             {
                 return NotFound();
             }
+            List<Answer> answers = _context.Answers.Where(a => a.PollID == id).ToList();
+            poll.Answers = answers;
+
+            foreach(PollMember p in _context.PollMembers.Where(p => p.PollID == id).ToList())
+            {
+                _context.PollMembers.Remove(p);
+            }
+            foreach(Answer a in answers)
+            {
+                _context.Answers.Remove(a);
+            }
 
             _context.Polls.Remove(poll);
             await _context.SaveChangesAsync();
