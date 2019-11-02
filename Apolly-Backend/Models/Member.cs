@@ -20,7 +20,7 @@ namespace ASP.NET_Core_API.Models
 
         //public ICollection<PollMember> PollMember { get; set; }
 
-        public ICollection<FriendRelationship> Friends { get; set; }
+        //public ICollection<FriendRelationship> Friends { get; set; }
 
         //public ICollection<Vote> Votes { get; set; }
     }

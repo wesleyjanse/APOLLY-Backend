@@ -47,7 +47,8 @@ namespace ASP.NET_Core_API.Models
             context.SaveChanges();
 
             context.Friends.AddRange(
-                new FriendRelationship { FriendID = 1, MemberID = 2}
+                new Friends { FriendID = 1, MemberID = 3, Accepted = false},
+                new Friends { FriendID = 2, MemberID = 3, Accepted = true }
                );
             context.SaveChanges();
         }

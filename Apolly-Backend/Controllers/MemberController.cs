@@ -38,7 +38,15 @@ namespace Apolly_Backend.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Member>>> GetMembers()
         {
-            return await _context.Members.Include(m => m.Friends).ToListAsync();
+            return await _context.Members.ToListAsync();
+            //return await _context.Members.Include(m => m.Friends).ToListAsync();
+        }
+
+        [HttpGet]
+        [Route("getWhereName/{username}")]
+        public async Task<ActionResult<Member>> getAllByMemberID(string username)
+        {
+            return await _context.Members.Where(m => m.Username.ToLower() == username).FirstAsync();
         }
 
         // GET: api/Member/5

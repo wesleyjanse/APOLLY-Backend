@@ -8,12 +8,16 @@ using System.Threading.Tasks;
 
 namespace Apolly_Backend.Models
 {
-    public class FriendRelationship
+    public class Friends
     {
-        public long FriendRelationshipID { get; set; }
-
+        public long FriendsID { get; set; }
         public long MemberID { get; set; }
         public long FriendID { get; set; }
-        //public Member Friend { get;set; }
+        public bool Accepted { get; set; }
+
+        [ForeignKey("FriendID")]
+        public Member Friend { get; set; }
+        [ForeignKey("MemberID")]
+        public Member Member { get; set; }
     }
 }

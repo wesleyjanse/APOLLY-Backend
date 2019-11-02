@@ -16,7 +16,7 @@ namespace ASP.NET_Core_API.Models
         public DbSet<Vote> Votes { get; set; }
         public DbSet<Answer> Answers { get; set; }
         public DbSet<PollMember> PollMembers { get; set; }
-        public DbSet<FriendRelationship> Friends { get; set; }
+        public DbSet<Friends> Friends { get; set; }
  
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         { 
@@ -25,7 +25,7 @@ namespace ASP.NET_Core_API.Models
             modelBuilder.Entity<Vote>().ToTable("Vote");
             modelBuilder.Entity<Answer>().ToTable("Answer");
             modelBuilder.Entity<PollMember>().ToTable("PollMember");
-            modelBuilder.Entity<FriendRelationship>().ToTable("Friends");
+            modelBuilder.Entity<Friends>().ToTable("Friends");
         }
     }
 }
