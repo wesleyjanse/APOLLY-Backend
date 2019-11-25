@@ -25,7 +25,7 @@ namespace ASP.NET_Core_API.Models
             modelBuilder.Entity<Vote>().ToTable("Vote");
             modelBuilder.Entity<Answer>().ToTable("Answer");
             modelBuilder.Entity<PollMember>().ToTable("PollMember");
-            modelBuilder.Entity<Friends>().ToTable("Friends");
+            modelBuilder.Entity<Friends>().ToTable("Friends"); 
         }
     }
 }

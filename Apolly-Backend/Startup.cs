@@ -98,7 +98,9 @@ namespace Apolly_Backend
             app.UseCors("MyPolicy");
             app.UseSwagger();
             app.UseSwaggerUI(c =>
-            { c.SwaggerEndpoint("/swagger/v1/swagger.json", "Member API v1"); });
+            {
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "MyAPI V1");
+            });
             app.UseHttpsRedirection();
             app.UseAuthentication();
             app.UseMvc();

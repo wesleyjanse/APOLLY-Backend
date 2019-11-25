@@ -11,8 +11,8 @@ namespace Apolly_Backend.Models
     public class Friends
     {
         public long FriendsID { get; set; }
-        public long MemberID { get; set; }
-        public long FriendID { get; set; }
+        public long? MemberID { get; set; }
+        public long? FriendID { get; set; }
         public bool Accepted { get; set; }
 
         [ForeignKey("FriendID")]

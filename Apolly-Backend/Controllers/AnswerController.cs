@@ -7,9 +7,11 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using ASP.NET_Core_API.Models;
 using Apolly_Backend.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Apolly_Backend.Controllers
 {
+    [Authorize]
     [Route("api/[controller]")]
     [ApiController]
     public class AnswerController : ControllerBase
@@ -22,6 +24,7 @@ namespace Apolly_Backend.Controllers
         }
 
         // GET: api/Answer
+        [Authorize]
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Answer>>> GetAnswers()
         {
@@ -29,6 +32,7 @@ namespace Apolly_Backend.Controllers
         }
 
         // GET: api/Answer/5
+        [Authorize]
         [HttpGet("{id}")]
         public async Task<ActionResult<Answer>> GetAnswer(long id)
         {
@@ -43,6 +47,7 @@ namespace Apolly_Backend.Controllers
         }
 
         // PUT: api/Answer/5
+        [Authorize]
         [HttpPut("{id}")]
         public async Task<IActionResult> PutAnswer(long id, Answer answer)
         {
@@ -73,6 +78,7 @@ namespace Apolly_Backend.Controllers
         }
 
         // POST: api/Answer
+        [Authorize]
         [HttpPost]
         public async Task<ActionResult<Answer>> PostAnswer(Answer answer)
         {
@@ -83,6 +89,7 @@ namespace Apolly_Backend.Controllers
         }
 
         // DELETE: api/Answer/5
+        [Authorize]
         [HttpDelete("{id}")]
         public async Task<ActionResult<Answer>> DeleteAnswer(long id)
         {

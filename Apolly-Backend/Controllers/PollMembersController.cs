@@ -7,9 +7,11 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using ASP.NET_Core_API.Models;
 using Apolly_Backend.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Apolly_Backend.Controllers
 {
+    [Authorize]
     [Route("api/[controller]")]
     [ApiController]
     public class PollMembersController : ControllerBase
@@ -22,6 +24,8 @@ namespace Apolly_Backend.Controllers
         }
 
         // GET: api/PollMembers
+        // Returns only the unique pollmember objects. 
+        [Authorize]
         [HttpGet]
         public async Task<ActionResult<IEnumerable<PollMember>>> GetPollMembers()
         {
@@ -41,6 +45,7 @@ namespace Apolly_Backend.Controllers
         }
 
         // GET: api/PollMembers/5
+        [Authorize]
         [HttpGet("{id}")]
         public async Task<ActionResult<PollMember>> GetPollMember(long id)
         {
@@ -55,6 +60,7 @@ namespace Apolly_Backend.Controllers
         }
 
         // GET: api/PollMembers/5
+        [Authorize]
         [HttpGet]
         [Route("getAllByMemberId/{memberId}")]
         public async Task<ActionResult<IEnumerable<PollMember>>> GetAllPollMembersByMemberID(long memberId)
@@ -68,7 +74,17 @@ namespace Apolly_Backend.Controllers
 
             return pollMembers;
         }
+        [Authorize]
+        [HttpGet]
+        [Route("getCreatorByPollId/{pollId}")]
+        public async Task<ActionResult<Member>> getCreatorByPollId(long pollId)
+        {
+            var pollMember = await _context.PollMembers.Where(p => p.PollID == pollId).Where(p => p.Creator == true).FirstAsync();
+            var member = await _context.Members.Where(m => m.MemberID == pollMember.MemberID).FirstAsync();
 
+            return member;
+        }
+        [Authorize]
         [HttpGet]
         [Route("getPollMemberByPollId/{pollId}")]
         public async Task<ActionResult<PollMember>> getPollMemberByPollId(long pollId)
@@ -84,6 +100,7 @@ namespace Apolly_Backend.Controllers
         }
 
         // PUT: api/PollMembers/5
+        [Authorize]
         [HttpPut("{id}")]
         public async Task<IActionResult> PutPollMember(long id, PollMember pollMember)
         {
@@ -114,6 +131,7 @@ namespace Apolly_Backend.Controllers
         }
 
         // POST: api/PollMembers
+        [Authorize]
         [HttpPost]
         public async Task<ActionResult<PollMember>> PostPollMember(PollMember pollMember)
         {
@@ -124,6 +142,7 @@ namespace Apolly_Backend.Controllers
         }
 
         // DELETE: api/PollMembers/5
+        [Authorize]
         [HttpDelete("{id}")]
         public async Task<ActionResult<PollMember>> DeletePollMember(long id)
         {

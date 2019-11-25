@@ -14,8 +14,6 @@ namespace Apolly_Backend.Models
         public string PossibleAnswer { get; set; }
         public long? PollID { get; set; }
 
-        //[ForeignKey("PollID")]
-        //public Poll Poll { get; set; }
         public ICollection<Vote> Votes { get; set; }
     }
 }

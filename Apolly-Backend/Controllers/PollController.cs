@@ -7,9 +7,11 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using ASP.NET_Core_API.Models;
 using Apolly_Backend.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Apolly_Backend.Controllers
 {
+    [Authorize]
     [Route("api/[controller]")]
     [ApiController]
     public class PollController : ControllerBase
@@ -22,6 +24,7 @@ namespace Apolly_Backend.Controllers
         }
 
         // GET: api/Poll
+        [Authorize]
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Poll>>> GetPolls()
         {
@@ -29,11 +32,10 @@ namespace Apolly_Backend.Controllers
         }
 
         // GET: api/Poll/5
+        [Authorize]
         [HttpGet("{id}")]
         public async Task<ActionResult<Poll>> GetPoll(long id)
         {
-            //var poll = await _context.Polls.FindAsync(id);
-
             var poll = await _context.Polls
                         .Include(i => i.Answers).ThenInclude(a => a.Votes)
                         .FirstOrDefaultAsync(i => i.PollID == id);
@@ -47,6 +49,7 @@ namespace Apolly_Backend.Controllers
         }
 
         // PUT: api/Poll/5
+        [Authorize]
         [HttpPut("{id}")]
         public async Task<IActionResult> PutPoll(long id, Poll poll)
         {
@@ -77,6 +80,7 @@ namespace Apolly_Backend.Controllers
         }
 
         // POST: api/Poll
+        [Authorize]
         [HttpPost]
         public async Task<ActionResult<Poll>> PostPoll(Poll poll)
         {
@@ -87,6 +91,7 @@ namespace Apolly_Backend.Controllers
         }
 
         // DELETE: api/Poll/5
+        [Authorize]
         [HttpDelete("{id}")]
         public async Task<ActionResult<Poll>> DeletePoll(long id)
         {

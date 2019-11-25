@@ -12,6 +12,5 @@ namespace Apolly_Backend.Models
         public long AnswerID { get; set; }
         public long MemberID { get; set; }
         public Member Member { get; set; }
-        //public Answer Answer { get; set; }
     }
 }

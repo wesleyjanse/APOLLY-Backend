@@ -7,9 +7,11 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using ASP.NET_Core_API.Models;
 using Apolly_Backend.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Apolly_Backend.Controllers
 {
+    [Authorize]
     [Route("api/[controller]")]
     [ApiController]
     public class VoteController : ControllerBase
@@ -22,6 +24,7 @@ namespace Apolly_Backend.Controllers
         }
 
         // GET: api/Vote
+        [Authorize]
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Vote>>> GetVotes()
         {
@@ -29,6 +32,7 @@ namespace Apolly_Backend.Controllers
         }
 
         // GET: api/Vote/5
+        [Authorize]
         [HttpGet("{id}")]
         public async Task<ActionResult<Vote>> GetVote(long id)
         {
@@ -43,6 +47,7 @@ namespace Apolly_Backend.Controllers
         }
 
         // PUT: api/Vote/5
+        [Authorize]
         [HttpPut("{id}")]
         public async Task<IActionResult> PutVote(long id, Vote vote)
         {
@@ -73,6 +78,7 @@ namespace Apolly_Backend.Controllers
         }
 
         // POST: api/Vote
+        [Authorize]
         [HttpPost]
         public async Task<ActionResult<Vote>> PostVote(Vote vote)
         {
@@ -86,6 +92,7 @@ namespace Apolly_Backend.Controllers
         }
 
         // DELETE: api/Vote/5
+        [Authorize]
         [HttpDelete("{id}")]
         public async Task<ActionResult<Vote>> DeleteVote(long id)
         {
