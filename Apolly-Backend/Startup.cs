@@ -62,7 +62,12 @@ namespace Apolly_Backend
             });
 
             services.AddScoped<IUserService, UserService>();
-            services.AddCors(o => o.AddPolicy("MyPolicy", builder => { builder.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader(); }));
+            services.AddCors(o => o.AddPolicy("MyPolicy", builder => { 
+                builder.AllowAnyOrigin().
+                AllowAnyMethod().
+                AllowAnyHeader(); }
+            ));
+
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new Info { Title = "My API", Version = "v1" });

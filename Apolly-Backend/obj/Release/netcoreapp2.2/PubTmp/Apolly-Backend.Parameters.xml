@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <parameters>
-  <parameter name="IIS Web Application Name" description="" value="Apolly-Backend20191115014126" tags="IisApp">
+  <parameter name="IIS Web Application Name" description="" value="Apolly-Backend20191125052638" tags="IisApp">
     <parameterEntry kind="ProviderPath" scope="IisApp" match="^D:\\1-School\\3ITF\\Angular\\Apolly-Backend\\Apolly-Backend\\obj\\Release\\netcoreapp2\.2\\PubTmp\\Out\\$" />
   </parameter>
 </parameters>

@@ -42,7 +42,6 @@ namespace Apolly_Backend.Controllers
 
         // GET: api/Member
         // Get all members that are registered (Exlcuding members created by the back-end)
-        [Authorize]
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Member>>> GetMembers()
         {
@@ -81,7 +80,6 @@ namespace Apolly_Backend.Controllers
         }
 
         // Get member where username = x
-        [Authorize]
         [HttpGet]
         [Route("getWhereName/{username}")]
         public async Task<ActionResult<Member>> getWhereName(string username)
@@ -90,7 +88,6 @@ namespace Apolly_Backend.Controllers
         }
 
         // Get member where email = x
-        [Authorize]
         [HttpGet]
         [Route("getWhereEmail/{email}")]
         public async Task<ActionResult<Member>> getWhereEmail(string email)
@@ -100,7 +97,6 @@ namespace Apolly_Backend.Controllers
 
         // GET: api/Member/5
         // Get member by id
-        [Authorize]
         [HttpGet("{id}")]
         public async Task<ActionResult<Member>> GetMember(long id)
         {
@@ -116,7 +112,6 @@ namespace Apolly_Backend.Controllers
 
         // PUT: api/Member/5
         // Update member
-        [Authorize]
         [HttpPut("{id}")]
         public async Task<IActionResult> PutMember(long id, Member member)
         {
@@ -148,14 +143,13 @@ namespace Apolly_Backend.Controllers
 
         // POST: api/Member
         // Post new member
-        [Authorize]
         [HttpPost]
         public async Task<ActionResult<Member>> PostMember(Member member)
         {
             List<Member> allMembers = _context.Members.ToList();
             foreach (var item in allMembers)
             {
-                if (item.Username == member.Username || item.Email == member.Email)
+                if (item.Username.ToLower() == member.Username.ToLower() || item.Email.ToLower() == member.Email.ToLower())
                 {
                     return BadRequest();
                 }
